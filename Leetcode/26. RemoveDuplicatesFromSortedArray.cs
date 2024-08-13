@@ -32,6 +32,8 @@ namespace Leetcode
             }
 
             return insertIntoArray;
+
+            // O(n), O(1)
         }
 
     }
