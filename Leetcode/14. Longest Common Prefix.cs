@@ -81,21 +81,19 @@ namespace Leetcode
 
 // trying to do easier way
 
-//// loop through all the individual strings in the array
-//foreach (string str in strs)
+// loop through the smallest string in the array
+//for (int i = 0; i < smallestString.Length; i++)
 //{
-//    // if the chars are a match
-//    if (curChar == str[i])
-//    {
-//        // if it is the last string in the string array, return the outputString
-//        // because we are at the end of the smallest string
-//        if (str == strs.Last()) { return outputString.ToString(); }
+//    // current char that we are comparing to
+//    char curChar = smallestString[i];
 
-//        // if this is the last char in the string, add it to the outputString
-//        if (curChar == str.Last()) { outputString.Append(curChar); }
-//    } else
+//    // loop through each string in the string arrays
+//    for (int j = 0; j < strs.Length; j++)
 //    {
-//        // if the chars are not a match, return the outputString as is
-//        return outputString.ToString();
+//        if (strs[j][i] != curChar)
+//        {
+//            return outputString.ToString();
+//        }
 //    }
+//    outputString.Append(curChar);
 //}
