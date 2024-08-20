@@ -15,55 +15,50 @@ namespace LeetcodeTests.LinkedListTests
         public void HasCycleTest()
         {
             // Arrange
-            ListNode head = new ListNode(3);
-            ListNode originalHead = head;
-
-            // add values to head
-            head.next = new ListNode(2);
-            head = head.next;
-            head.next = new ListNode(0);
-            head = head.next;
-            head.next = new ListNode(-4);
-            head = head.next; 
+            var node1 = new ListNode(3);
+            var node2 = new ListNode(2);
+            node1.next = node2;
+            node2.next = new ListNode(0);
+            node2.next.next = new ListNode(-4);
+            node2.next.next.next = node2;
 
             // Act
-            bool result = LinkedCycle.HasCycle(originalHead);
             bool expected = true;
+            bool actual = LinkedCycle.HasCycle(node1);
 
             // Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void HasCycleTest2()
         {
             // Arrange
-            ListNode head = new ListNode(1);
-            ListNode originalHead = head;
-
-            // add values to head
-            head.next = new ListNode(2);
+            var node1 = new ListNode(1);
+            var node2 = new ListNode(2);
+            node1.next = node2;
+            node2.next = node1;
 
             // Act
-            bool result = LinkedCycle.HasCycle(originalHead);
             bool expected = true;
+            bool actual = LinkedCycle.HasCycle(node1);
 
             // Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void HasCycleTest3()
         {
             // Arrange
-            ListNode head = new ListNode(1);
+            var node1 = new ListNode(1);
 
             // Act
-            bool result = LinkedCycle.HasCycle(head);
             bool expected = false;
+            bool actual = LinkedCycle.HasCycle(node1);
 
             // Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

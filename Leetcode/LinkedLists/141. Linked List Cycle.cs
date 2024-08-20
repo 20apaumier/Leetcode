@@ -10,6 +10,12 @@ namespace Leetcode.LinkedLists
     {
         public int val;
         public ListNode next;
+
+        public ListNode()
+        {
+            next = null;
+        }
+
         public ListNode(int x)
         {
             val = x;
